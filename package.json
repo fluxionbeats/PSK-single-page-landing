@@ -7,8 +7,8 @@
     "styles": "postcss src/styles/index.css --use postcss-import --use postcss-csso --no-map --output dist/styles/index.css",
     "build": "npm run html && npm run styles",
     "linthtml": "npx linthtml src/index.html",
-    "lintcss": "npx stylelint src/**/*.css",
-    "lint": "npm run linthtml && npm run lintcss"
+    "stylelint": "npx stylelint src/**/*.css",
+    "lint": "npm run linthtml && npm run stylelint"
   },
   "devDependencies": {
     "@linthtml/linthtml": "0.8.8",
