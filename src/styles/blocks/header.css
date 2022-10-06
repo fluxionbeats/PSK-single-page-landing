@@ -8,6 +8,7 @@
   z-index: 10;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 16px 0;
+  background-color: var(--white);
 }
 
 .navbar {
@@ -91,8 +92,8 @@
   display: block;
   position: absolute;
   top: 0;
-  right: -80%;
-  width: 80%;
+  right: -70%;
+  width: 70%;
   height: 100vh;
   background-color: var(--white);
   transition: right 0.3s cubic-bezier(0.18, 1.03, 0.5, 1);

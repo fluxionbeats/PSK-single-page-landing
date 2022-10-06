@@ -2,7 +2,7 @@ const hamburgerElement = document.querySelector('.hamburger');
 const mobileMenuElement = document.querySelector('.mobile-menu');
 const shadowElement = document.querySelector('.shadow');
 const headerElement = document.querySelector('.header');
-
+const heroElement = document.querySelector('.hero');
 
 hamburgerElement.addEventListener('click', (evt) => {
   evt.preventDefault();
@@ -16,4 +16,9 @@ const setContentMargin = () => {
   headerElement.nextElementSibling.style.marginTop = headerElement.offsetHeight + "px";
 }
 
+const setHeroHeight = () => {
+  heroElement.style.height = `calc(100vh - ${headerElement.offsetHeight}px)`;
+}
+
 setContentMargin();
+setHeroHeight();
