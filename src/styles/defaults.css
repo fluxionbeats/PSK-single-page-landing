@@ -62,6 +62,11 @@ a::before {
   transition: background-color 0.1s ease-out;
 }
 
+input {
+  border: 0;
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -133,6 +138,7 @@ a::before {
   background-color: var(--secondary);
   border-radius: 24px;
   transition: background-color 0.15s linear;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .call-button:hover {
