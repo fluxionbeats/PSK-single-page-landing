@@ -26,6 +26,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   transition: background-color 0.3s cubic-bezier(0.18, 1.03, 0.5, 1);
+  position: relative;
 }
 
 body.modal-open {
