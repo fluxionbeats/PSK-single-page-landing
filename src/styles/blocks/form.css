@@ -41,6 +41,10 @@
   transition: border 0.2s, background-color 0.2s;
 }
 
+.call-form__input::placeholder {
+  color: #bbbbbb;
+}
+
 .call-form__input:focus {
   background-color: var(--white);
   border: 2px solid var(--secondary);

@@ -67,6 +67,10 @@ input {
   outline: none;
 }
 
+address {
+  font-style: normal;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -106,30 +110,58 @@ input {
   display: block;
 }
 
-.call-number {
-  color: var(--black);
-  position: relative;
-}
-
-.call-number::before {
+.with--icon::before {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: var(--black);
   content: "";
   display: block;
   width: 16px;
   height: 16px;
   float: left;
-  /* stylelint-disable-next-line property-no-vendor-prefix */
-  -webkit-mask: url("../images/icons/icon-call.svg") no-repeat 100% 100%;
-  mask: url("../images/icons/icon-call.svg") no-repeat 100% 100%;
-  /* stylelint-disable-next-line property-no-vendor-prefix */
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  background-color: var(--black);
   margin-right: 8px;
   margin-top: 4px;
 }
 
+.call-number::before {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask: url("../images/icons/icon-call.svg") no-repeat 100% 100%;
+  mask: url("../images/icons/icon-call.svg") no-repeat 100% 100%;
+}
+
 .call-number:hover::before {
   background-color: var(--primary);
+}
+
+.icon-address--light::before {
+  background-color: var(--secondary);
+}
+
+.icon-address::before {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask: url("../images/icons/icon-address.svg") no-repeat 100% 100%;
+  mask: url("../images/icons/icon-address.svg") no-repeat 100% 100%;
+}
+
+.icon-email--light::before {
+  background-color: var(--secondary);
+}
+
+.icon-email::before {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask: url("../images/icons/icon-email.svg") no-repeat 100% 100%;
+  mask: url("../images/icons/icon-email.svg") no-repeat 100% 100%;
+}
+
+.icon-instagram--light::before {
+  background-color: var(--secondary);
+}
+
+.icon-instagram::before {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask: url("../images/icons/icon-instagram.svg") no-repeat 100% 100%;
+  mask: url("../images/icons/icon-instagram.svg") no-repeat 100% 100%;
 }
 
 .call-button {

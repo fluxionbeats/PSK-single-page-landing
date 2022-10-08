@@ -31,7 +31,7 @@
         </nav>
         <div class="header__order-call order-call">
           <span class="call-text call-text--header">Заказать звонок</span>
-          <a class="call-number call-number--header" href="tel:+79105957873">+7 910 595 78 73</a>
+          <a class="call-number--header with--icon call-number" href="tel:+79105957873">+7 910 595 78 73</a>
           <a class="call-button call-button--header" href="#">Заказать звонок</a>
         </div>
         <!-- </div> -->
@@ -56,7 +56,7 @@
           </ul>
         </nav>
         <aside class="order-call--mobile">
-          <a class="call-number call-number--header" href="tel:+79105957873">+7 910 595 78 73</a>
+          <a class="call-number--header with--icon call-number" href="tel:+79105957873">+7 910 595 78 73</a>
         </aside>
       </div>
     </div>
@@ -141,15 +141,96 @@
           <form class="call-form__form-order" action="" method="POST" autocomplete="off">
             <div class="call-form__item">
               <label class="call-form__label" for="name">Имя</label>
-              <input class="call-form__input" type="text" name="name" id="name" pattern="[A-Za-zА-Яа-яЁё]{1,20}">
+              <input class="call-form__input" type="text" name="name" id="name" pattern="[A-Za-zА-Яа-яЁё]{1,20}"
+                placeholder="Александр">
             </div>
             <div class="call-form__item">
               <label class="call-form__label" for="tel">Телефон</label>
-              <input class="call-form__input input-tel" type="tel" name="tel" id="tel">
+              <input class="call-form__input input-tel" type="tel" name="tel" id="tel" placeholder="+7 900 400 30 20">
             </div>
             <button class="call-form__call-button call-button" type="submit">Заказать звонок</button>
           </form>
         </div>
+      </div>
+    </section>
+    <section class="contacts main__contacts">
+      <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <section class="contacts-items">
+          <h3 class="contacts-items__title">
+            Как с нами связаться?
+          </h3>
+          <div class="contacts-items__container">
+            <div class="contacts-item">
+              <h4 class="contacts-item__title with--icon icon-address icon-address--light">
+                Адрес производства
+              </h4>
+              <address class="contacts-item__address">
+                г. Малоярославец, ул. Мирная, д. 1
+              </address>
+            </div>
+            <div class="contacts-item">
+              <h4 class="contacts-item__title with--icon icon-email icon-email--light">
+                Почта
+              </h4>
+              <address class="contacts-item__address">
+                <a class="contacts-email" href="emailto:krasnov@opalubka-lesa.ru">krasnov@opalubka-lesa.ru</a>
+              </address>
+            </div>
+          </div>
+        </section>
+        <section class="contacts-items">
+          <h3 class="contacts-items__title">
+            Мы в социальных сетях
+          </h3>
+          <div class="contacts-items__container">
+            <div class="contacts-item">
+              <h4 class="contacts-item__title with--icon icon-instagram icon-instagram--light">
+                Instagram
+              </h4>
+              <address class="contacts-item__address">
+                <a href="#" class="contacts-instagram">@psk_promstroykomplekt</a>
+              </address>
+              <img class="card-credits__img" src="./images/qr-code-instagram.jpg"
+                alt="QR-код instagram «Промстройкомплект»" width="80" height="80">
+            </div>
+          </div>
+        </section>
+        <section class="contacts-cards">
+          <h3 class="visually-hidden">Менеджеры</h3>
+          <ul class="contacts-cards__items">
+            <li class="contacts-card">
+              <header class="contacts-card__header">
+                <h4 class="contacts-card__title">Краснов Артём Алексеевич</h4>
+                <p class="contacts-card__job">Менеджер по продажам</p>
+              </header>
+              <ul class="card-credits">
+                <li class="card-credits__item">
+                  <a class="card-credits__link with--icon call-number" href="tel:+79105957873">+7 910 595 78 73</a>
+                </li>
+                <li class="card-credits__item">
+                  <a class="card-credits__link with--icon icon-email"
+                    href="mailto:krasnov@opalubka-lesa.ru">krasnov@opalubka-lesa.ru</a>
+                </li>
+              </ul>
+            </li>
+            <li class="contacts-card">
+              <header class="contacts-card__header">
+                <h4 class="contacts-card__title">Егоренков Александр Александрович</h4>
+                <p class="contacts-card__job">Менеджер по продажам</p>
+              </header>
+              <ul class="card-credits">
+                <li class="card-credits__item">
+                  <a class="card-credits__link with--icon call-number" href="tel:+79036960271">+7 903 696 02 71</a>
+                </li>
+                <li class="card-credits__item">
+                  <a class="card-credits__link with--icon icon-email"
+                    href="mailto:alex-0271@inbox.ru">alex-0271@inbox.ru</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
   </main>
