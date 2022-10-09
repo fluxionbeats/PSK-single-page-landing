@@ -1,3 +1,5 @@
+import init from "./map.js";
+
 const hamburgerElement = document.querySelector('.hamburger');
 const mobileMenuElement = document.querySelector('.mobile-menu');
 const shadowElement = document.querySelector('.shadow');
@@ -22,3 +24,5 @@ const setHeroHeight = () => {
 
 setContentMargin();
 setHeroHeight();
+
+ymaps.ready(init);
