@@ -71,4 +71,12 @@
   .contacts-cards__items {
     gap: 20px;
   }
+
+  .card-credits__img {
+    display: block;
+  }
+
+  .address-social {
+    margin-bottom: 8px;
+  }
 }
