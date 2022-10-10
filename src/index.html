@@ -23,17 +23,17 @@
         <nav class="navigation navigation--desktop">
           <ul class="navigation__links">
             <li class="navigation__item">
-              <a class="navigation__link" href="#">Маршрут</a>
+              <a class="navigation__link" data-scrollto="#main__route">Маршрут</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link" href="#">Контакты</a>
+              <a class="navigation__link" data-scrollto="#main__contacts">Контакты</a>
             </li>
           </ul>
         </nav>
         <div class="header__order-call order-call">
           <span class="call-text call-text--header">Заказать звонок</span>
           <a class="call-number--header with--icon call-number" href="tel:+79105957873">+7 910 595 78 73</a>
-          <a class="call-button call-button--header" href="#">Заказать звонок</a>
+          <a class="call-button call-button--header" data-scrollto="#main__call-form">Заказать звонок</a>
         </div>
         <!-- </div> -->
         <button class="hamburger" type="button" aria-label="Меню">
@@ -46,13 +46,13 @@
         <nav class="navigation navigation--mobile">
           <ul class="mobile-menu__links">
             <li class="mobile-menu__item">
-              <a class="navigation__link navigation__link--mobile" href="#">Маршрут</a>
+              <a class="navigation__link navigation__link--mobile" data-scrollto="#main__route">Маршрут</a>
             </li>
             <li class="mobile-menu__item">
-              <a class="navigation__link navigation__link--mobile" href="#">Контакты</a>
+              <a class="navigation__link navigation__link--mobile" data-scrollto="#main__contacts">Контакты</a>
             </li>
             <li class="mobile-menu__item">
-              <a class="navigation__link navigation__link--mobile" href="#">Заказать звонок</a>
+              <a class="navigation__link navigation__link--mobile" data-scrollto="#main__call-form">Заказать звонок</a>
             </li>
           </ul>
         </nav>
@@ -62,7 +62,7 @@
       </div>
     </div>
   </header>
-  <main class="main">
+  <main class="main" id="main">
     <section class="hero main__hero">
       <div class="main__hero-wrapper hero-wrapper">
         <header class="hero-header main-header">
@@ -78,7 +78,7 @@
         </header>
         <div class="hero__button">
           <div class="container">
-            <button class="hero__main-button" type="button">Заказать звонок</button>
+            <a class="hero__main-button" type="button" data-scrollto="#main__call-form">Заказать звонок</a>
           </div>
         </div>
       </div>
@@ -134,7 +134,7 @@
         </div>
       </div>
     </section>
-    <section class="call-form main__call-form">
+    <section class="call-form main__call-form" id="main__call-form">
       <div class="container">
         <div class="call-form__wrapper">
           <h2 class="section-title call-form__title">Остались вопросы?</h2>
@@ -154,7 +154,7 @@
         </div>
       </div>
     </section>
-    <section class="contacts main__contacts">
+    <section class="contacts main__contacts" id="main__contacts">
       <div class="container">
         <h2 class="section-title">Контакты</h2>
         <section class="contacts-items">
@@ -234,13 +234,37 @@
         </section>
       </div>
     </section>
-    <section class="route main__route">
+    <section class="route main__route" id="main__route">
       <div class="container">
         <h2 class="section-title">Маршрут</h2>
           <div class="route__map" id="route-map"></div>
       </div>
     </section>
   </main>
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer__navigation">
+        <a class="footer__logo-link" title="В начало" data-scrollto="#main">
+          <img class="footer__logo" src="./images/logo-light.png" alt="Логотип ООО «Промстройкомплект» (светлый)" width="85" height="38">
+        </a>
+        <ul class="footer__navigation-links">
+          <li class="footer__navigation-item">
+            <a class="navigation__link navigation__link--footer" data-scrollto="#main__products">Продукция</a>
+          </li>
+          <li class="footer__navigation-item">
+            <a class="navigation__link navigation__link--footer" data-scrollto="#main__contacts">Контакты</a>
+          </li>
+          <li class="footer__navigation-item">
+            <a class="navigation__link navigation__link--footer" data-scrollto="#main__route">Маршрут</a>
+          </li>
+          <li class="footer__navigation-item">
+            <a class="navigation__link navigation__link--footer" data-scrollto="#main__call-form">Заказать звонок</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="footer__copyright">ООО «Промстройкомплект», <span class="copyright__year">2022</span></p>
+    </div>
+  </footer>
   <script src="./scripts/app.js" type="module"></script>
 </body>
 

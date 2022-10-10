@@ -8,6 +8,8 @@ export default function init() {
     controls: ['geolocationControl', 'routeButtonControl', 'typeSelector', 'fullscreenControl', 'zoomControl']
   });
 
+  myMap.behaviors.disable('scrollZoom');
+
   const placemark = new ymaps.Placemark(OBJECT_COORDINATES,
     {
     },

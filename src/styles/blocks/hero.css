@@ -51,6 +51,7 @@
 }
 
 .hero__main-button:hover {
+  color: var(--white);
   background-color: var(--secondary);
   border-color: transparent;
 }
