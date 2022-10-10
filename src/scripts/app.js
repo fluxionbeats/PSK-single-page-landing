@@ -1,4 +1,5 @@
 import init from "./map.js";
+import './form.js';
 
 const hamburgerElement = document.querySelector('.hamburger');
 const mobileMenuElement = document.querySelector('.mobile-menu');

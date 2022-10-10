@@ -117,8 +117,8 @@
             <h3 class="card__title">Объемная опалубка CUPLOCK</h3>
           </article>
           <article class="product-cards__item card">
-            <img class="card__img" src="./images/products/komplektuyuschie.jpg" alt="Комплектующие"
-              width="355" height="280">
+            <img class="card__img" src="./images/products/komplektuyuschie.jpg" alt="Комплектующие" width="355"
+              height="280">
             <h3 class="card__title">Комплектующие</h3>
           </article>
           <article class="product-cards__item card">
@@ -144,15 +144,16 @@
         <div class="call-form__wrapper">
           <h2 class="section-title call-form__title">Остались вопросы?</h2>
           <p class="section-subtitle call-form__subtitle">Получите бесплатную консультацию!</p>
-          <form class="call-form__form-order" action="" method="POST" autocomplete="off">
+          <form class="call-form__form-order" action="" method="POST" autocomplete="off" id="call-form" novalidate>
             <div class="call-form__item">
               <label class="call-form__label" for="name">Имя</label>
-              <input class="call-form__input" type="text" name="name" id="name" pattern="[A-Za-zА-Яа-яЁё]{1,20}"
-                placeholder="Александр">
+              <input class="call-form__input" type="text" name="name" id="name" placeholder="Александр" required
+                data-pristine-required-message="Это обязательное поле">
             </div>
             <div class="call-form__item">
               <label class="call-form__label" for="tel">Телефон</label>
-              <input class="call-form__input input-tel" type="tel" name="tel" id="tel" placeholder="+7 900 400 30 20">
+              <input class="call-form__input input-tel" type="tel" name="tel" id="tel" placeholder="+7 900 400 30 20"
+                required data-pristine-required-message="Это обязательное поле">
             </div>
             <button class="call-form__call-button call-button" type="submit">Заказать звонок</button>
           </form>
@@ -242,7 +243,7 @@
     <section class="route main__route" id="main__route">
       <div class="container">
         <h2 class="section-title">Маршрут</h2>
-          <div class="route__map" id="route-map"></div>
+        <div class="route__map" id="route-map"></div>
       </div>
     </section>
   </main>
@@ -250,7 +251,8 @@
     <div class="container">
       <nav class="footer__navigation">
         <a class="footer__logo-link" title="В начало" data-scrollto="#main">
-          <img class="footer__logo" src="./images/logo-light.png" alt="Логотип ООО «Промстройкомплект» (светлый)" width="85" height="38">
+          <img class="footer__logo" src="./images/logo-light.png" alt="Логотип ООО «Промстройкомплект» (светлый)"
+            width="85" height="38">
         </a>
         <ul class="footer__navigation-links">
           <li class="footer__navigation-item">
@@ -270,6 +272,7 @@
       <p class="footer__copyright">ООО «Промстройкомплект», <span class="copyright__year">2022</span></p>
     </div>
   </footer>
+  <script src="./scripts/pristine.min.js"></script>
   <script src="./scripts/app.js" type="module"></script>
 </body>
 
