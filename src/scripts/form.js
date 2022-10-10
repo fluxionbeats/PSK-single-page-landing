@@ -34,5 +34,10 @@ pristine.addValidator(inputTel, validatePhone, 'Неверный формат т
 callForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const isValid = pristine.validate();
-  console.log(isValid);
+  if(isValid){
+    fetch("./mail.php", {
+      method: 'POST',
+      body: new FormData(callForm),
+    });
+  }
 });
