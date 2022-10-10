@@ -6,13 +6,18 @@ const shadowElement = document.querySelector('.shadow');
 const headerElement = document.querySelector('.header');
 const heroElement = document.querySelector('.hero');
 const currentYearValueElement = document.querySelector('.copyright__year');
+const scrollLinkElements = document.querySelectorAll('[data-scrollto]');
 
-hamburgerElement.addEventListener('click', (evt) => {
-  evt.preventDefault();
+const toggleMobileMenu = () => {
   hamburgerElement.classList.toggle('active');
   mobileMenuElement.classList.toggle('active');
   shadowElement.classList.toggle('active');
   document.body.classList.toggle('modal-open');
+};
+
+hamburgerElement.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  toggleMobileMenu();
 });
 
 const setContentMargin = () => {
@@ -32,14 +37,30 @@ const setCurrentYear = () => {
 const scrollToElement = (element) => {
   window.scroll({
     left: 0,
-    top: element.offsetTop + headerElement.offsetHeight,
+    top: element.offsetTop,
     behavior: 'smooth',
   })
-}
+};
+
+const addScrollListener = (elements) => {
+  Array.from(elements).forEach((element) => {
+    element.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      if(element.classList.contains('navigation__link--mobile')){
+        toggleMobileMenu();
+      }
+      const purposeElement = document.querySelector(element.dataset.scrollto);
+      if (purposeElement) {
+        scrollToElement(purposeElement);
+      }
+    })
+  });
+};
 
 setContentMargin();
 setHeroHeight();
 setCurrentYear();
+addScrollListener(scrollLinkElements);
 
 
 ymaps.ready(init);
