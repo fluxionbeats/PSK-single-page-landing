@@ -35,7 +35,7 @@ callForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const isValid = pristine.validate();
   if(isValid){
-    fetch("./mail.php", {
+    fetch("mail.php", {
       method: 'POST',
       body: new FormData(callForm),
     });

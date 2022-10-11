@@ -1,39 +1,49 @@
 <?php
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+require 'phpmailer/src/Exception.php';
 
-require_once('phpmailer/PHPMailerAutoload.php');
-$mail = new PHPMailer;
-$mail->CharSet = 'utf-8';
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 $name = $_POST['name'];
-$phone = $_POST['tel'];
+$tel = $_POST['tel'];
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail = new PHPMailer(true);
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mail.ru';  																							// Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'minecraft_plus@inbox.ru'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = 'post2013'; // Ваш пароль от почты с которой будут отправляться письма
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
+//Enable SMTP debugging.
+$mail->SMTPDebug = 3;
+$mail->CharSet = 'UTF-8';
+//Set PHPMailer to use SMTP.
+$mail->isSMTP();
+//Set SMTP host name
+$mail->Host = 'ssl://smtp.mail.ru';
+//Set this to true if SMTP host requires authentication to send email
+$mail->SMTPAuth = true;
+//Provide username and password
+$mail->Username = "89206134166@inbox.ru";
+$mail->Password = "Eiwd5pmeqUzYXNqnvc4B";
+//If SMTP requires TLS encryption then set it
+$mail->SMTPSecure = "SSL";
+//Set TCP port to connect to
+$mail->Port = 465 ;
 
-$mail->setFrom('minecraft_plus@inbox.ru'); // от кого будет уходить письмо?
-$mail->addAddress('89206134166@inbox.ru');     // Кому будет уходить письмо
-//$mail->addAddress('ellen@example.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->From = "89206134166@inbox.ru";
+$mail->FromName = "ООО «Промстройкомплект»";
 
-$mail->Subject = 'Заявка с тестового сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone.;
-$mail->AltBody = '';
+$mail->addAddress("89206134166@inbox.ru", "Имя менеджера");
 
-if(!$mail->send()) {
-    echo 'Error';
-} else {
-    header('location: thank-you.html');
+$mail->isHTML(true);
+
+$mail->Subject = "Запрос на обратный звонок: " . $name;
+$mail->Body = "<h1 style='font-size:24px;'>Пользователь оставил заявку на обратный звонок</h1>
+<p style='font-size:16px;'>Имя: <b>" . $name . "</b></p>
+<p style='font-size:16px;'>Телефон: <a href='tel:" . $tel . "'>" . $tel . "</a>";
+$mail->AltBody = "This is the plain text version of the email content";
+
+try {
+    $mail->send();
+    echo "Message has been sent successfully";
+} catch (Exception $e) {
+    echo "Mailer Error: ";
 }
-?>
