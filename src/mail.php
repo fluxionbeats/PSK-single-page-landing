@@ -21,17 +21,17 @@ $mail->Host = 'ssl://smtp.mail.ru';
 //Set this to true if SMTP host requires authentication to send email
 $mail->SMTPAuth = true;
 //Provide username and password
-$mail->Username = "89206134166@inbox.ru";
-$mail->Password = "Eiwd5pmeqUzYXNqnvc4B";
+$mail->Username = "pskopalubka@mail.ru";
+$mail->Password = "duXCKKEPzgfqumUvzpAw";
 //If SMTP requires TLS encryption then set it
 $mail->SMTPSecure = "SSL";
 //Set TCP port to connect to
 $mail->Port = 465 ;
 
-$mail->From = "89206134166@inbox.ru";
+$mail->From = "pskopalubka@mail.ru";
 $mail->FromName = "ООО «Промстройкомплект»";
 
-$mail->addAddress("89206134166@inbox.ru", "Имя менеджера");
+$mail->addAddress("krasnov@opalubka-lesa.ru", "Артём Краснов");
 
 $mail->isHTML(true);
 
@@ -41,9 +41,10 @@ $mail->Body = "<h1 style='font-size:24px;'>Пользователь остави
 <p style='font-size:16px;'>Телефон: <a href='tel:" . $tel . "'>" . $tel . "</a>";
 $mail->AltBody = "This is the plain text version of the email content";
 
-try {
-    $mail->send();
-    echo "Message has been sent successfully";
-} catch (Exception $e) {
-    echo "Mailer Error: ";
+if(!$mail->send()){
+    $message = 'Форма успешно отправлена!';
 }
+else{
+    $message = 'Ошибка отправки формы!';
+}
+?>

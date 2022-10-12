@@ -9,11 +9,15 @@ const heroElement = document.querySelector('.hero');
 const currentYearValueElement = document.querySelector('.copyright__year');
 const scrollLinkElements = document.querySelectorAll('[data-scrollto]');
 
+const toggleBodyModalMode = () => {
+  shadowElement.classList.toggle('active');
+  document.body.classList.toggle('modal-open');
+}
+
 const toggleMobileMenu = () => {
   hamburgerElement.classList.toggle('active');
   mobileMenuElement.classList.toggle('active');
-  shadowElement.classList.toggle('active');
-  document.body.classList.toggle('modal-open');
+  toggleBodyModalMode();
 };
 
 hamburgerElement.addEventListener('click', (evt) => {
